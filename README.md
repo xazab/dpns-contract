@@ -1,9 +1,9 @@
 # DPNS Contract
 
-[![Build Status](https://img.shields.io/travis/com/dashevo/dpns-contract.svg?branch=master&style=flat-square)](https://travis-ci.com/dashevo/dpns-contract)
-[![NPM version](https://img.shields.io/npm/v/@dashevo/dpns-contract.svg?style=flat-square)](https://npmjs.org/package/@dashevo/dpns-contract)
+[![Build Status](https://img.shields.io/travis/com/xazab/dpns-contract.svg?branch=master&style=flat-square)](https://travis-ci.com/xazab/dpns-contract)
+[![NPM version](https://img.shields.io/npm/v/@xazab/dpns-contract.svg?style=flat-square)](https://npmjs.org/package/@xazab/dpns-contract)
 
-> JSON Contracts for Dash Platform Name Service
+> JSON Contracts for Xazab Platform Name Service
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@
 ## Install
 
 ```sh
-npm install @dashevo/dpns-contract
+npm install @xazab/dpns-contract
 ```
 
 ## Usage
@@ -26,8 +26,8 @@ npm install @dashevo/dpns-contract
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/dashevo/dpns-contract/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/xazab/dpns-contract/issues/new) or submit PRs.
 
 ## License
 
-[MIT](LICENSE) &copy; Dash Core Group, Inc.
+[MIT](LICENSE) &copy; Dash Core Group, Inc. |  &copy; Xazab Foundations

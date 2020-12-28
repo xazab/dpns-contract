@@ -1,5 +1,5 @@
 {
-  "name": "@dashevo/dpns-contract",
+  "name": "@xazab/dpns-contract",
   "version": "0.3.0-dev.5",
   "description": "A contract and helper scripts for DPNS DApp",
   "scripts": {
@@ -34,9 +34,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@dashevo/dapi-client": "~0.16.0-dev.1",
-    "@dashevo/dashcore-lib": "~0.18.12",
-    "@dashevo/dpp": "~0.16.0-dev.4",
+    "@xazab/dapi-client": "~0.16.0-dev.1",
+    "@xazab/xazabcore-lib": "~0.18.12",
+    "@xazab/dpp": "~0.16.0-dev.4",
     "chai": "^4.2.0",
     "dirty-chai": "^2.0.1",
     "eslint": "^6.7.2",

@@ -15,7 +15,7 @@
       {
         "properties": [
           {
-            "records.dashUniqueIdentityId": "asc"
+            "records.xazabUniqueIdentityId": "asc"
           }
         ],
         "unique": true
@@ -41,7 +41,7 @@
         "pattern": "^$|^((?!-)[a-z0-9-\\.]{0,189}[a-z0-9])$",
         "minLength": 0,
         "maxLength": 190,
-        "description": "A full parent domain name in lowercase for case-insensitive uniqueness validation. e.g. 'dash'",
+        "description": "A full parent domain name in lowercase for case-insensitive uniqueness validation. e.g. 'xazab'",
         "$comment": "Must either be equal to an existing domain or empty to create a top level domain. Only the data contract owner can create top level domains."
       },
       "preorderSalt": {
@@ -54,26 +54,26 @@
       "records": {
         "type": "object",
         "properties": {
-          "dashUniqueIdentityId": {
+          "xazabUniqueIdentityId": {
             "type": "object",
             "byteArray": true,
             "minBytesLength": 32,
             "maxBytesLength": 32,
-            "contentMediaType": "application/x.dash.dpp.identifier",
+            "contentMediaType": "application/x.xazab.dpp.identifier",
             "description": "Identity ID to be used to create the primary name the Identity",
             "$comment": "Must be equal to the document owner"
           },
-          "dashAliasIdentityId": {
+          "xazabAliasIdentityId": {
             "type": "object",
             "byteArray": true,
             "minBytesLength": 32,
             "maxBytesLength": 32,
-            "contentMediaType": "application/x.dash.dpp.identifier",
+            "contentMediaType": "application/x.xazab.dpp.identifier",
             "description": "Identity ID to be used to create alias names for the Identity",
             "$comment": "Must be equal to the document owner"
           }
         },
-        "$comment": "Constraint with max and min properties ensure that only one identity record is used - either a `dashUniqueIdentityId` or a `dashAliasIdentityId`",
+        "$comment": "Constraint with max and min properties ensure that only one identity record is used - either a `xazabUniqueIdentityId` or a `xazabAliasIdentityId`",
         "minProperties": 1,
         "maxProperties": 1,
         "additionalProperties": false

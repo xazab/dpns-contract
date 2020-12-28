@@ -1,8 +1,8 @@
 const crypto = require('crypto');
 
-const DashPlatformProtocol = require('@dashevo/dpp');
+const XazabPlatformProtocol = require('@xazab/dpp');
 
-const generateRandomIdentifier = require('@dashevo/dpp/lib/test/utils/generateRandomIdentifier');
+const generateRandomIdentifier = require('@xazab/dpp/lib/test/utils/generateRandomIdentifier');
 
 const dpnsContractDocumentsSchema = require('../../schema/dpns-contract-documents.json');
 
@@ -14,7 +14,7 @@ describe('DPNS Contract', () => {
   beforeEach(function beforeEach() {
     const fetchContractStub = this.sinon.stub();
 
-    dpp = new DashPlatformProtocol({
+    dpp = new XazabPlatformProtocol({
       stateRepository: {
         fetchDataContract: fetchContractStub,
       },
@@ -156,10 +156,10 @@ describe('DPNS Contract', () => {
         rawDomainDocument = {
           label: 'Wallet',
           normalizedLabel: 'wallet',
-          normalizedParentDomainName: 'dash',
+          normalizedParentDomainName: 'xazab',
           preorderSalt: crypto.randomBytes(32),
           records: {
-            dashUniqueIdentityId: generateRandomIdentifier(),
+            xazabUniqueIdentityId: generateRandomIdentifier(),
           },
           subdomainRules: {
             allowSubdomains: false,
@@ -529,11 +529,11 @@ describe('DPNS Contract', () => {
           }
         });
 
-        describe('Dash Identity', () => {
-          it('should have either `dashUniqueIdentityId` or `dashAliasIdentityId`', async () => {
+        describe('Xazab Identity', () => {
+          it('should have either `xazabUniqueIdentityId` or `xazabAliasIdentityId`', async () => {
             rawDomainDocument.records = {
-              dashUniqueIdentityId: identityId,
-              dashAliasIdentityId: identityId,
+              xazabUniqueIdentityId: identityId,
+              xazabAliasIdentityId: identityId,
             };
 
             try {
@@ -552,10 +552,10 @@ describe('DPNS Contract', () => {
             }
           });
 
-          describe('dashUniqueIdentityId', () => {
+          describe('xazabUniqueIdentityId', () => {
             it('should no less than 32 bytes', async () => {
               rawDomainDocument.records = {
-                dashUniqueIdentityId: crypto.randomBytes(30),
+                xazabUniqueIdentityId: crypto.randomBytes(30),
               };
 
               try {
@@ -570,13 +570,13 @@ describe('DPNS Contract', () => {
 
                 expect(error.name).to.equal('JsonSchemaError');
                 expect(error.keyword).to.equal('minBytesLength');
-                expect(error.dataPath).to.equal('.records.dashUniqueIdentityId');
+                expect(error.dataPath).to.equal('.records.xazabUniqueIdentityId');
               }
             });
 
             it('should no more than 32 bytes', async () => {
               rawDomainDocument.records = {
-                dashUniqueIdentityId: crypto.randomBytes(64),
+                xazabUniqueIdentityId: crypto.randomBytes(64),
               };
 
               try {
@@ -591,15 +591,15 @@ describe('DPNS Contract', () => {
 
                 expect(error.name).to.equal('JsonSchemaError');
                 expect(error.keyword).to.equal('maxBytesLength');
-                expect(error.dataPath).to.equal('.records.dashUniqueIdentityId');
+                expect(error.dataPath).to.equal('.records.xazabUniqueIdentityId');
               }
             });
           });
 
-          describe('dashAliasIdentityId', () => {
+          describe('xazabAliasIdentityId', () => {
             it('should no less than 32 bytes', async () => {
               rawDomainDocument.records = {
-                dashAliasIdentityId: crypto.randomBytes(30),
+                xazabAliasIdentityId: crypto.randomBytes(30),
               };
 
               try {
@@ -614,13 +614,13 @@ describe('DPNS Contract', () => {
 
                 expect(error.name).to.equal('JsonSchemaError');
                 expect(error.keyword).to.equal('minBytesLength');
-                expect(error.dataPath).to.equal('.records.dashAliasIdentityId');
+                expect(error.dataPath).to.equal('.records.xazabAliasIdentityId');
               }
             });
 
             it('should no more than 32 bytes', async () => {
               rawDomainDocument.records = {
-                dashAliasIdentityId: crypto.randomBytes(64),
+                xazabAliasIdentityId: crypto.randomBytes(64),
               };
 
               try {
@@ -635,7 +635,7 @@ describe('DPNS Contract', () => {
 
                 expect(error.name).to.equal('JsonSchemaError');
                 expect(error.keyword).to.equal('maxBytesLength');
-                expect(error.dataPath).to.equal('.records.dashAliasIdentityId');
+                expect(error.dataPath).to.equal('.records.xazabAliasIdentityId');
               }
             });
           });
